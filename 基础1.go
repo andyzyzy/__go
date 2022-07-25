@@ -20,7 +20,7 @@ func main() {
 	var urlPath = fmt.Sprintf(url, age, name) // 格式化字符串
 	fmt.Println(urlPath)
 
-	n1 := nm() // 调用函数
+	n1 := nm() // 调用函数,  :=只能用在函数内
 	fmt.Println(n1)
 
 	const c1, c2, c3, c4 = 200, 111, 222, 333 // 定义常量

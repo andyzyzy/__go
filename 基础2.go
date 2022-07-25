@@ -50,6 +50,11 @@ func For() {
 	}
 }
 func compare(a int, b int) int {
+	/*
+		if 布尔表达式 {
+		   // 在布尔表达式为 true 时执行
+		}
+	*/
 	var result int
 	if a < b {
 		result = b
@@ -134,6 +139,42 @@ func CallBack(x int) int {
 	fmt.Println("回调函数:", x)
 	return x
 }
+
+// 闭包
+func getSequence() func() int {
+	s := 0
+	return func() int {
+		s += 1
+		return s
+	}
+
+}
+func Func7() {
+	gs := getSequence()
+	fmt.Println(gs())
+	fmt.Println(gs())
+	fmt.Println(gs())
+}
+
+type Circle struct {
+	radius float64
+}
+
+func (c Circle) getAreas() float64 {
+	return c.radius * c.radius
+}
+
+func (c *Circle) charges(radius float64) {
+	c.radius = radius
+}
+func Func8() {
+	var c Circle
+	c.radius = 100.00
+	fmt.Println(c.getAreas())
+	c.charges(20)
+	fmt.Println(c.getAreas())
+}
+
 func main() {
 	//Select() // select 信道接受消息，阻塞接收
 	//For()  // for 循环
@@ -142,6 +183,7 @@ func main() {
 	//Func3()
 	//Func4() //值交换
 	//Func5() //函数作为实参，灵活调用
-	Func6() // 函数作为参数传递，实现回调。--重要
-
+	//Func6() // 函数作为参数传递，实现回调。--重要
+	//Func7() // 闭包
+	// Func8() // 结构体
 }
