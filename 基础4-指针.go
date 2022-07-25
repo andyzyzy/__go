@@ -37,8 +37,20 @@ func pointer3() {
 	fmt.Println("aaa的地址是：", &aaa, "值为：", **aaa)
 	fmt.Println(*aaa)
 }
+func pointer4(a, b *int) {
+	*a, *b = *b, *a
+}
+
+func pointer5(a, b int) (int, int) {
+	return b, a
+}
 func main() {
 	//pointer1()
 	//pointer2()   //指针赋值及遍历
-	pointer3() // 多级指针
+	//pointer3() // 多级指针
+	a := 2
+	b := 3
+	pointer4(&a, &b) // 指针作为参数
+	fmt.Println(a, b)
+	fmt.Println(pointer5(2, 3))
 }
