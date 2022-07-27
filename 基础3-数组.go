@@ -62,14 +62,14 @@ func main() {
 	fmt.Println(z[1][3])
 	// 函数传递数组为参数
 	//void myFunction(param []int)
-	Func1()
+	//Func1()
 
-	i := 7
-	var j int = i
-	fmt.Println(j)
-	fmt.Println(i)
-	var t int
-	if t {
-		fmt.Println(t)
-	}
+	//i := 7
+	//var j int = i
+	//fmt.Println(j)
+	//fmt.Println(i)
+
+	arr := [5]int{1, 2, 3, 4, 5}
+
+	fmt.Println(cap(arr))
 }
